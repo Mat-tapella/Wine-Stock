@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:winestock/widget/nav_bar.dart';
 
 import 'home_page.dart';
 
@@ -61,7 +62,7 @@ class MainPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) {
-                          return const HomePage();
+                          return const NavBar();
                         }));
                       },
                       child: Container(

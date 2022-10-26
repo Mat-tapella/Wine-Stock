@@ -1,49 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:circle_nav_bar/circle_nav_bar.dart';
+import 'package:winestock/widget/home_page.dart';
+import 'package:winestock/widget/wine_page.dart';
 
-class NavBar extends StatelessWidget {
+class NavBar extends StatefulWidget {
   const NavBar({super.key});
+
+  @override
+  State<NavBar> createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    WinePage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CircleNavBar(
-        activeIcons: const [
-          Icon(Icons.person, color: Color.fromARGB(255, 255, 255, 255)),
-          Icon(Icons.home, color: Color.fromARGB(255, 255, 255, 255)),
-          Icon(Icons.wine_bar, color: Color.fromARGB(255, 255, 255, 255)),
+      appBar: AppBar(
+        leading: const Icon(Icons.wine_bar, color: Colors.white),
+        title: const Text('Wine Stock'),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.business,
+            ),
+            label: 'Business',
+          ),
         ],
-        inactiveIcons: const [
-          Text(
-            "My",
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            "Home",
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            "Wine",
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
-        color: const Color.fromARGB(255, 255, 37, 37),
-        height: 60,
-        circleWidth: 60,
-        initIndex: 1,
-        onChanged: (v) {
-          // TODO
-        },
-        // tabCurve: ,
-        padding: const EdgeInsets.only(left: 16, right: 16, bottom: 20),
-        cornerRadius: const BorderRadius.only(
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
-          bottomRight: Radius.circular(24),
-          bottomLeft: Radius.circular(24),
-        ),
-        shadowColor: const Color.fromARGB(255, 183, 58, 58),
-        elevation: 10,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        backgroundColor: Colors.red,
+        onTap: _onItemTapped,
       ),
     );
   }

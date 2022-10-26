@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:winestock/widget/home_page.dart';
+import 'package:winestock/widget/wine_page.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
@@ -12,14 +14,8 @@ class _TestPageState extends State<TestPage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Business',
-      style: optionStyle,
-    ),
+    HomePage(),
+    WinePage(),
   ];
 
   void _onItemTapped(int index) {

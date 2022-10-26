@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/test.dart';
+import 'package:winestock/widget/home_page.dart';
+import 'package:winestock/widget/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TestPage(),
+      home: const MainPage(
+        title: 'Main Page',
+      ),
     );
   }
 }

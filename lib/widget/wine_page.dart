@@ -9,16 +9,32 @@ class WinePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      getPages: [
-        GetPage(
-          name: "/WinePage",
-          page: () => const GetxWineView(),
-          binding: GetxWineBindings(),
-        ),
-      ],
-      initialRoute: "exo4",
-      home: const GetxWineView(),
+    return GridView.count(
+      // Create a grid with 2 columns. If you change the scrollDirection to
+      // horizontal, this produces 2 rows.
+      crossAxisCount: 2,
+      // Generate 100 widgets that display their index in the List.
+      children: List.generate(100, (index) {
+        return Center(
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18),
+              side: const BorderSide(
+                color: Colors.red,
+                width: 2.0,
+              ),
+            ),
+            child: SizedBox(
+              width: 200,
+              height: 200,
+              child: Center(
+                  child: Text(
+                'Wine $index',
+              )),
+            ),
+          ),
+        );
+      }),
     );
   }
 }
