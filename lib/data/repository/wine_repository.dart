@@ -1,19 +1,20 @@
 import 'package:dio/dio.dart';
+import '../model/wine.dart';
 
 class WineRepository {
   WineRepository();
 
-  Future<void> getAllWine() async {
+  Future<List<Wine>> getAllWine() async {
     try {
       var response = await Dio().get(
-        'http://www.google.com',
-        queryParameters: {
-          'monParam1': "maValeur1",
-        },
+        'https://portal.winedata.io/api/wines?language=en&per-page=10&page=1',
       );
-      print(response);
+      List<Wine> wineList =
+          response.data.map<Wine>((wine) => Wine.fromJson(wine)).toList();
+      return wineList;
     } catch (e) {
       print(e);
+      return [];
     }
   }
 }
