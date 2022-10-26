@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:winestock/widget/nav_bar.dart';
 
-import 'home_page.dart';
-
 class MainPage extends StatelessWidget {
   const MainPage({super.key, required String title});
 

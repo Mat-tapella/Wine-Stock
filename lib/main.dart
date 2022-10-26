@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/home_page.dart';
 import 'package:winestock/widget/main_page.dart';
 
 void main() {
