@@ -1,9 +1,8 @@
 // ignore_for_file: unnecessary_new
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/wine_page.dart';
+
+import 'home_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key, required String title});
@@ -52,16 +51,17 @@ class MainPage extends StatelessWidget {
                     TextButton(
                       style: TextButton.styleFrom(
                         shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(18),
-                            side: const BorderSide(
-                              color: Colors.white,
-                              width: 2.0,
-                            )),
+                          borderRadius: new BorderRadius.circular(18),
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
+                        ),
                       ),
                       onPressed: () {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) {
-                          return const WinePage();
+                          return const HomePage();
                         }));
                       },
                       child: Container(

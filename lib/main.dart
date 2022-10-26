@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/main_page.dart';
+import 'package:winestock/widget/test.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(title: 'Flutter Demo Home Page'),
+      home: const TestPage(),
     );
   }
 }

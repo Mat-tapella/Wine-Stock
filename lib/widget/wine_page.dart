@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:winestock/widget/getx/getx_bindings.dart';
+import 'package:winestock/widget/getx/getx_view.dart';
 
-class WinePage extends StatefulWidget {
+class WinePage extends StatelessWidget {
   const WinePage({super.key});
 
   @override
-  State<WinePage> createState() => _WinePageState();
-}
-
-class _WinePageState extends State<WinePage> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(),
+    return GetMaterialApp(
+      getPages: [
+        GetPage(
+          name: "/WinePage",
+          page: () => const GetxWineView(),
+          binding: GetxWineBindings(),
+        ),
+      ],
+      initialRoute: "exo4",
+      home: const GetxWineView(),
     );
   }
 }
