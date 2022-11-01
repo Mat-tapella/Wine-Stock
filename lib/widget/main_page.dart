@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:winestock/widget/nav_bar.dart';
+import 'package:winestock/widget/test.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key, required String title});
@@ -60,7 +61,7 @@ class MainPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) {
-                          return const NavBar();
+                          return const TestPage();
                         }));
                       },
                       child: Container(

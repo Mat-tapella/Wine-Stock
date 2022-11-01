@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1077339055675",
+    "project_id": "wine-stock-dd933",
+    "storage_bucket": "wine-stock-dd933.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077339055675:android:7fb57153975ffc2fa59e1e",
+        "android_client_info": {
+          "package_name": "com.example.winestock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077339055675-mnfeg6frrferdup22tn9jh1phtvk43ei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvaM-nL6Ea6TbKIc-08hTzNCN2J7BCyUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077339055675-mnfeg6frrferdup22tn9jh1phtvk43ei.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1077339055675-osp70i7vuaqo1cgilni926357pkmn90t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.winestock"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

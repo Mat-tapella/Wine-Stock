@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/main_page.dart';
+import 'package:winestock/widget/test.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -15,9 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainPage(
-        title: 'Main Page',
-      ),
+      home: const TestPage(),
     );
   }
 }
