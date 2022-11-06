@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:winestock/widget/nav_bar.dart';
 import 'package:winestock/widget/test.dart';
 
 class MainPage extends StatelessWidget {
