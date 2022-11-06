@@ -93,10 +93,12 @@ class _AddPageState extends State<AddPage> {
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(50)),
                   onPressed: () {
-                    FirebaseFirestore.instance.collection('Wines').add({
+                    FirebaseFirestore.instance.collection('wines').add({
                       'name': nameController.value.text,
                       'year': yearController.value.text,
-                      'region': region
+                      'region': region,
+                      'image':
+                          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/WINE-Logo.svg/1200px-WINE-Logo.svg.png'
                     });
                     Navigator.pop(context);
                   },
